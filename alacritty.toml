@@ -1,0 +1,40 @@
+[general]
+working_directory = "C:\\Users\\goriu"
+
+[window]
+startup_mode = "Fullscreen"
+
+[font]
+offset = { x = 0, y = 3 }
+normal = { family = "JetBrainsMono Nerd Font", style = "Medium" }
+bold = { family = "JetBrainsmono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsmono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsmono Nerd Font", style = "Bold Italic" }
+size = 9
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+[terminal.shell]
+program = "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+args = ["-NoLogo"]
+
+[keyboard]
+bindings = [
+  # { key = "V", mods = "Control", mode = "~Search", action = "ToggleViMode" },
+]
+
+[mouse]
+hide_when_typing = true
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 300
+blink_timeout = 7
+
+
+[bell]
+color = "#003300"
+duration = 32
+animation = "Ease"
