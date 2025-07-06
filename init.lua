@@ -14,3 +14,5 @@ vim.opt.shell = '"C:\\Program Files\\PowerShell\\7\\pwsh.exe"'
 vim.opt.shellcmdflag = "-NoLogo -NoProfile -Command"
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
+
+vim.opt.spell = true -- Enable spell checking
