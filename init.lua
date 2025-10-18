@@ -9,8 +9,6 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
   end,
 })
 
--- Set shell to PowerShell 7 with properly escaped path
-vim.opt.shell = '"C:\\Program Files\\PowerShell\\7\\pwsh.exe"'
 vim.opt.shellcmdflag = "-NoLogo -NoProfile -Command"
 vim.opt.shellquote = ""
 vim.opt.shellxquote = ""
