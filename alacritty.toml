@@ -1,6 +1,3 @@
-[general]
-working_directory = "C:\\Users\\goriu"
-
 [window]
 startup_mode = "Fullscreen"
 
@@ -16,13 +13,9 @@ size = 9
 semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
 save_to_clipboard = true
 
-[terminal.shell]
-program = "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
-args = ["-NoLogo"]
-
 [keyboard]
 bindings = [
-  # { key = "V", mods = "Control", mode = "~Search", action = "ToggleViMode" },
+    # { key = "V", mods = "Control", mode = "~Search", action = "ToggleViMode" },
 ]
 
 [mouse]
@@ -38,3 +31,4 @@ blink_timeout = 7
 color = "#003300"
 duration = 32
 animation = "Ease"
+
