@@ -28,45 +28,40 @@ return {
     ---@param title string|?
     ---@return string
     note_id_func = function(title)
-      -- If a title is provided (e.g., [[People]]), use it as the filename
       if title ~= nil then
-        -- Optional: Clean up the title to be file-system friendly
-        return title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+        -- Simply return the title exactly as you typed it in the [[link]]
+        return title
       else
-        -- Fallback to a random ID if no title is provided
-        return tostring(os.time()) .. "-" .. math.random(1000, 9999)
+        return tostring(os.time())
       end
     end,
 
+
     ---@param note obsidian.Note
-    frontmatter = {
-      ---@param note obsidian.Note
-      func = function(note)
-        -- 1. Initialize 'out' without the 'id' field
-        local out = { 
-          aliases = note.aliases, 
-          tags = note.tags 
-        }
+frontmatter = {
+  ---@param note obsidian.Note
+  func = function(note)
+    -- 1. Start with EVERYTHING already in the note's frontmatter
+    local out = {}
+    if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+      for k, v in pairs(note.metadata) do
+        out[k] = v
+      end
+    end
 
-        -- Separate Date and Time for better organization
-        out.date = os.date("%Y-%m-%d")
-        out.time = os.date("%H:%M")
+    -- 2. Add or overwrite your specific fields
+    -- This keeps existing aliases/tags if they exist, 
+    -- or creates them from the note object if they are new.
+    out.aliases = note.aliases
+    out.tags = note.tags
+    
+    -- 3. Set your custom fields
+    out.date = os.date("%Y-%m-%d")
+    out.source = "my"
 
-        -- 3. (Optional) If the note has a title, include it
-        if note.title then
-          out.title = note.title
-        end
-
-        -- 4. Merge metadata from templates
-        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-          for k, v in pairs(note.metadata) do
-            out[k] = v
-          end
-        end
-
-        return out
-      end,
-    },  },
+    return out
+  end,
+},  },
   keys = {
     -- Top Level / Navigation
     { "<leader>on", "<cmd>Obsidian new<cr>", desc = "New Note" },
