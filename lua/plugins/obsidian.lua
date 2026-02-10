@@ -57,8 +57,10 @@ frontmatter = {
     
     -- 3. Set your custom fields
     out.date = os.date("%Y-%m-%d")
-    out.source = "my"
-
+-- ONLY set "my" if source is currently nil or empty
+        if out.source == nil or out.source == "" then
+          out.source = "my"
+        end
     return out
   end,
 },  },
