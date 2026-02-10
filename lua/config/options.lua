@@ -4,3 +4,4 @@
 vim.opt.spell = true -- Включить проверку орфографии
 vim.opt.spelllang = { "en", "ru", "es" } -- Список языков
 vim.g.autoformat = false
+vim.opt.mouse = ""
