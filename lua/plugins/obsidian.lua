@@ -131,7 +131,7 @@ frontmatter = {
       "<cmd>Obsidian follow_link vsplit<cr>", 
       desc = "Follow Link in Vertical Split" 
     },
-    { "<leader>on", ":Obsidian extract_note<cr>", mode = "v", desc = "Extract to New Note" },
+    { "<leader>ox", ":Obsidian extract_note<cr>", mode = "v", desc = "Extract to New Note" },
     { "<leader>ol", ":Obsidian link<cr>", mode = "v", desc = "Link Selection" },
     { "<leader>oL", ":Obsidian link_new<cr>", mode = "v", desc = "Link to New Note" },
   },
